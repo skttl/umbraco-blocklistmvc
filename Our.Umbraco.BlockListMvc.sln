@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.BlockListMvc.Site", ".website\Our.Umbraco.BlockListMvc.Site.csproj", "{bea8306f-fa23-49c1-850e-93f47a8e704a}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Our.Umbraco.BlockListMvc", "src\Our.Umbraco.BlockListMvc\Our.Umbraco.BlockListMvc.csproj", "{7ce26698-35db-4e6a-b58c-911596854ae5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{bea8306f-fa23-49c1-850e-93f47a8e704a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{bea8306f-fa23-49c1-850e-93f47a8e704a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{bea8306f-fa23-49c1-850e-93f47a8e704a}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{bea8306f-fa23-49c1-850e-93f47a8e704a}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ce26698-35db-4e6a-b58c-911596854ae5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ce26698-35db-4e6a-b58c-911596854ae5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ce26698-35db-4e6a-b58c-911596854ae5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ce26698-35db-4e6a-b58c-911596854ae5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A4335E4-0198-4777-9409-64E22F1F8F2C}
+	EndGlobalSection
+EndGlobal

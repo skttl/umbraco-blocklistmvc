@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<RootNamespace>Our.Umbraco.BlockListMvc</RootNamespace>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<ContentTargetFolders>content</ContentTargetFolders>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<OutputPath>bin\output\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="UmbracoCms.Web" Version="8.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="App_Plugins\**\*" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="Controllers\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Composing\Current.cs" />
+	  <Compile Include="Composing\UmbracoWebCompositionExtensions.cs" />
+	  <Compile Include="Constants.cs" />
+	  <Compile Include="Helpers\RenderHelper.cs" />
+	  <Compile Include="Helpers\SurfaceControllerHelper.cs" />
+	  <Compile Include="Models\BlockListItemContext.cs" />
+	  <Compile Include="Models\BlockListItemRendering.cs" />
+	</ItemGroup>
+</Project>
