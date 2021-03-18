@@ -70,7 +70,8 @@ namespace Our.Umbraco.BlockListMvc.Helpers
 
             rendering.RouteValues = new
             {
-                blockListItem = new BlockListItemWithContext(item, list),
+                blockListItem = item,
+                blockListItemContext = new BlockListItemContext(item, list),
                 blockListItemContentTypeAlias = contentTypeAlias,
                 blockListItemViewPath = viewPath
             };

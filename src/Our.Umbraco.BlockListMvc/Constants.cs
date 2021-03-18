@@ -8,6 +8,6 @@ namespace Our.Umbraco.BlockListMvc
 {
     public class Constants
     {
-        public const string BlockListViewDataKey = "Our.Umbraco.BlockListMvc.BlockList";
+        public const string BlockListItemContextViewDataKey = "Our.Umbraco.BlockListMvc.BlockListItemContext";
     }
 }

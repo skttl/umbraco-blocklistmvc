@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Our.Umbraco.BlockListMvc.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,11 @@ namespace Our.Umbraco.BlockListMvc.Controllers
             get { return (TModel)ControllerContext.RouteData.Values["blockListItem"]; }
         }
 
+        public BlockListItemContext BlockListItemContext
+        {
+            get { return (BlockListItemContext)ControllerContext.RouteData.Values["blockListItemContext"]; }
+        }
+
         public string ViewPath
         {
             get { return ControllerContext.RouteData.Values["blockListItemViewPath"] as string ?? string.Empty; }
@@ -29,6 +35,11 @@ namespace Our.Umbraco.BlockListMvc.Controllers
         public string ContentTypeAlias
         {
             get { return ControllerContext.RouteData.Values["blockListItemContentTypeAlias"] as string ?? string.Empty; }
+        }
+
+        protected void SetBlockListItemContext()
+        {
+            ViewData[Constants.BlockListItemContextViewDataKey] = BlockListItemContext;
         }
 
         protected PartialViewResult CurrentPartialView(object model = null)
@@ -48,13 +59,14 @@ namespace Our.Umbraco.BlockListMvc.Controllers
 
         protected override PartialViewResult PartialView(string viewName, object model)
         {
+            SetBlockListItemContext();
+
             if (string.IsNullOrWhiteSpace(ViewPath) == false)
             {
                 var viewPath = GetFullViewPath(viewName, ViewPath);
                 if (ViewEngines.Engines.FindPartialView(ControllerContext, viewPath).View != null)
                     return base.PartialView(viewPath, model);
             }
-
             return base.PartialView(viewName, model);
         }
 

@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Umbraco.Core;
 using Umbraco.Core.Models.Blocks;
-using Umbraco.Core.Models.PublishedContent;
 
 namespace Our.Umbraco.BlockListMvc.Models
 {
-    public class BlockListItemWithContext : BlockListItem
+    public class BlockListItemContext
     {
-        public BlockListItemWithContext(BlockListItem item, BlockListModel list) : base(item.ContentUdi, item.Content, item.SettingsUdi, item.Settings)
+        public BlockListItemContext(BlockListItem item, BlockListModel list)
         {
             Item = item;
             List = list;
@@ -34,27 +33,5 @@ namespace Our.Umbraco.BlockListMvc.Models
 
         private BlockListItem _nextBlock;
         public BlockListItem NextBlock => _nextBlock ?? (_nextBlock = List != null && !IsLast ? List[Index + 1] : null);
-    }
-
-    public class BlockListItemWithContext<T> : BlockListItemWithContext
-        where T : IPublishedElement
-    {
-        public BlockListItemWithContext(BlockListItem item, BlockListModel list) : base(item, list)
-        {
-
-        }
-        public new T Content { get; }
-    }
-
-    public class BlockListItemWithContext<TContent, TSettings> : BlockListItemWithContext
-        where TContent : IPublishedElement
-        where TSettings : IPublishedElement
-    {
-        public BlockListItemWithContext(BlockListItem item, BlockListModel list) : base(item, list)
-        {
-
-        }
-        public new TContent Content { get; }
-        public new TSettings Settings { get; }
     }
 }
