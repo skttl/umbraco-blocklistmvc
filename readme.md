@@ -74,3 +74,16 @@ By default, BlockListMvc will look for your block item views in Views/Partials/B
 The block view is then created like you are used to.
 
 BlockListMvc comes with its own [ViewPage called `BlockListItemViewPage`](https://github.com/skttl/umbraco-blocklistmvc/blob/master/src/Our.Umbraco.BlockListMvc/Mvc/BlockListItemViewPage.cs) which inherits `UmbracoViewPage` and adds a BlockContext property, from which you can get [contextual information](https://github.com/skttl/umbraco-blocklistmvc/blob/master/src/Our.Umbraco.BlockListMvc/Models/BlockListItemContext.cs) like the list the block belongs too, and whether the block is the first/last in the list etc.
+
+Example:
+
+```cshtml
+@using Umbraco.Core.Models.Blocks
+@using Our.Umbraco.BlockListMvc.Mvc
+@inherits BlockListItemViewPage<BlockListItem<Feature>>
+
+<div class="@(BlockContext.IsFirst == false ? "mt-4" : "")">
+    <h2>@Model.Content.FeatureName</h2>
+    <p>@Model.Content.FeatureDetails</p>
+</div>
+```
