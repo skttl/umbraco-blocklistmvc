@@ -22,7 +22,7 @@ namespace Our.Umbraco.BlockListMvc.Controllers
             get { return (TModel)ControllerContext.RouteData.Values["blockListItem"]; }
         }
 
-        public BlockListItemContext BlockListItemContext
+        public BlockListItemContext BlockContext
         {
             get { return (BlockListItemContext)ControllerContext.RouteData.Values["blockListItemContext"]; }
         }
@@ -37,9 +37,9 @@ namespace Our.Umbraco.BlockListMvc.Controllers
             get { return ControllerContext.RouteData.Values["blockListItemContentTypeAlias"] as string ?? string.Empty; }
         }
 
-        protected void SetBlockListItemContext()
+        protected void SetBlockContext()
         {
-            ViewData[Constants.BlockListItemContextViewDataKey] = BlockListItemContext;
+            ViewData[Constants.BlockListItemContextViewDataKey] = BlockContext;
         }
 
         protected PartialViewResult CurrentPartialView(object model = null)
@@ -59,7 +59,7 @@ namespace Our.Umbraco.BlockListMvc.Controllers
 
         protected override PartialViewResult PartialView(string viewName, object model)
         {
-            SetBlockListItemContext();
+            SetBlockContext();
 
             if (string.IsNullOrWhiteSpace(ViewPath) == false)
             {
