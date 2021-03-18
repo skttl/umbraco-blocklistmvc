@@ -34,5 +34,6 @@
 	  <Compile Include="Helpers\SurfaceControllerHelper.cs" />
 	  <Compile Include="Models\BlockListItemContext.cs" />
 	  <Compile Include="Models\BlockListItemRendering.cs" />
+	  <Compile Include="Mvc\BlockListItemViewPage.cs" />
 	</ItemGroup>
 </Project>
