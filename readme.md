@@ -28,12 +28,13 @@ public class TestDocTypeSurfaceController
 
 By inheriting from the `BlockListMvcSurfaceController` base class, you'll also have instant access to the following helper properties / methods.
 
-| Member                                            | Type              | Description |
-|---------------------------------------------------|-------------------|-------------|
-| Model                                             | BlockListItem     | The `BlockListItem` instance of your block's data. |
-| ViewPath                                          | String            | A reference to the currently configured ViewPath |
-| CurrentPartialView(object model = null)           | Method            | Helper method to return you to the default partial view for this cell. If no model is passed in, the standard Model will be passed down. |
-| PartialView(string viewName, object model = null) | Method            | Helper method to return you to an alternative partial view for this cell. If no model is passed in, the standard Model will be passed down. |
+| Member                                            | Type                     | Description |
+|---------------------------------------------------|--------------------------|-------------|
+| Model                                             | BlockListItem            | The `BlockListItem` instance of your block's data. |
+| BlockContext                                      | BlockListItemContext     | The context of the block list item, including the list that owns it. |
+| ViewPath                                          | String                   | A reference to the currently configured ViewPath |
+| CurrentPartialView(object model = null)           | Method                   | Helper method to return you to the default partial view for this cell. If no model is passed in, the standard Model will be passed down. |
+| PartialView(string viewName, object model = null) | Method                   | Helper method to return you to an alternative partial view for this cell. If no model is passed in, the standard Model will be passed down. |
 
 ---
 
