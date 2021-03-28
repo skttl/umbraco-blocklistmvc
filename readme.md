@@ -7,15 +7,15 @@ If you are not the type of developer that likes to put business logic in your vi
 ## Getting started
 
 ### Installation
-> *Note:* Full Text Search has been developed against **Umbraco v8.1.0** and will support that version and above.
+> *Note:* Block List Mvc has been developed against **Umbraco v8.7.0** and will support that version and above.
 
-Full Text Search can be installed from either Our Umbraco package repository, or NuGet. See developers guide for more information.
+Block List MVC can be installed from either Our Umbraco package repository, or NuGet. See developers guide for more information.
 
 #### Our Umbraco package repository
 
 To install from Our Umbraco, please download the package from:
 
-> [https://our.umbraco.com/packages/website-utilities/full-text-search-8/](https://our.umbraco.com/packages/website-utilities/full-text-search-8/)
+> [https://our.umbraco.com/packages/developer-tools/block-list-mvc/](https://our.umbraco.com/packages/developer-tools/block-list-mvc/)
 
 #### NuGet package repository
 
