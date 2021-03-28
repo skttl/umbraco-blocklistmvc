@@ -11,6 +11,17 @@
 	<PropertyGroup>
 		<OutputPath>bin\output\</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<Version>0.1.0</Version>
+		<Authors>Søren Kottal</Authors>
+		<Product>Block List MVC for Umbraco</Product>
+		<Description>If you are not the type of developer that likes to put business logic in your views, then the ability to have a controller for you partial view is a must. Block List MVC gives you the ability, to create Surface Controllers, to use when rendering items from a Block List in Umbraco.</Description>
+		<Copyright>Søren Kottal</Copyright>
+		<PackageLicenseExpression></PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/skttl/umbraco-blocklistmvc</PackageProjectUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageIcon>logo.png</PackageIcon>
+		<RepositoryUrl>https://github.com/skttl/umbraco-blocklistmvc</RepositoryUrl>
+		<PackageTags>umbraco blocklist mvc</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -35,5 +46,16 @@
 	  <Compile Include="Models\BlockListItemContext.cs" />
 	  <Compile Include="Models\BlockListItemRendering.cs" />
 	  <Compile Include="Mvc\BlockListItemViewPage.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\docs\logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
+	  <None Include="..\..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>

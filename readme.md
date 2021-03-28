@@ -1,16 +1,35 @@
 # Our.Umbraco.BlockListMvc 
-WIP port of the [hijacking feature from Doc Type Grid Editor](https://github.com/skttl/umbraco-doc-type-grid-editor/blob/develop/docs/developers-guide.md#doctypegrideditorsurfacecontroller), to be used when rendering Block Lists in Umbraco.
-
-Still very much work in progress
+If you are not the type of developer that likes to put business logic in your views, then the ability to have a controller for you partial view is a must. Block List MVC gives you the ability, to create Surface Controllers, to use when rendering items from a Block List in Umbraco.
 
 
 ---
 
+## Getting started
 
+### Installation
+> *Note:* Full Text Search has been developed against **Umbraco v8.1.0** and will support that version and above.
+
+Full Text Search can be installed from either Our Umbraco package repository, or NuGet. See developers guide for more information.
+
+#### Our Umbraco package repository
+
+To install from Our Umbraco, please download the package from:
+
+> [https://our.umbraco.com/packages/website-utilities/full-text-search-8/](https://our.umbraco.com/packages/website-utilities/full-text-search-8/)
+
+#### NuGet package repository
+
+To [install from NuGet](https://www.nuget.org/packages/Our.Umbraco.BlockListMvc), you can run the following command from within Visual Studio:
+
+	PM> Install-Package Our.Umbraco.BlockListMvc
+
+---
+
+## Developers Guide
 
 #### BlockListMvcSurfaceController
 
-If you are not the type of developer that likes to put business logic in your views, then the ability to have a controller for you partial view is a must. To help with this, the **BlockListMvc** comes with a base surface controller you can used called `BlockListMvcSurfaceController`.
+**BlockListMvc** comes with a base surface controller you can used called `BlockListMvcSurfaceController`. This is the heart of Block List MVC, and the controller that your block list item gets routed through when rendering.
 
 Simply create your controller inheriting from the above class, giving it a class name of `{DocTypeAlias}SurfaceController` and an action name of `{DocTypeAlias}` and then **BlockListMvc** will automatically wire it up for you and use it at render time.
 
@@ -87,4 +106,37 @@ Example:
     <h2>@Model.Content.FeatureName</h2>
     <p>@Model.Content.FeatureDetails</p>
 </div>
+```
+
+---
+
+#### Default BlockListMvcSurfaceController
+**BlockListMvc** comes with a default BlockListMvcSurfaceController, which controls all block items that doesn't have their own SurfaceController. If you wish to override this, you can do it using a Composer, and the extension method `SetDefaultBlockListMvcController` from the `Our.Umbraco.BlockListMvc.Composing` namespace.
+
+Example:
+```cs
+using System.Web.Mvc;
+using Umbraco.Core.Composing;
+using Our.Umbraco.BlockListMvc.Composing;
+using Our.Umbraco.BlockListMvc.Controllers;
+
+namespace Our.Umbraco.BlockListMvc.Site
+{
+    public class MyDefaultBlockListMvcSurfaceController : BlockListMvcSurfaceController
+    {
+        public ActionResult Index()
+        {
+            /* TODO: Amass unicorns */
+            return CurrentPartialView();
+        }
+    }
+
+    public class DefaultBlockListMvcSurfaceControllerComponent : IUserComposer
+    {
+        public void Compose(Composition composition)
+        {
+            composition.SetDefaultBlockListMvcController<MyDefaultBlockListMvcSurfaceController>();
+        }
+    }
+}
 ```

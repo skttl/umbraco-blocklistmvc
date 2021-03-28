@@ -3,21 +3,21 @@
   <info>
     <package>
       <name>Our.Umbraco.BlockListMvc</name>
-      <version>1.0.0</version>
+      <version>0.1.0</version>
       <iconUrl></iconUrl>
       <licence url="https://opensource.org/licenses/MIT">MIT</licence>
       <url>https://our.umbraco.com</url>
       <requirements type="strict">
         <major>8</major>
-        <minor>0</minor>
+        <minor>7</minor>
         <patch>0</patch>
       </requirements>
     </package>
     <author>
-      <name>UmbracoPackageTeam</name>
-      <website>https://our.umbraco.com</website>
+      <name>Søren Kottal</name>
+      <website>https://www.skttl.dk</website>
     </author>
-    <readme><![CDATA[Another awesome package]]></readme>
+    <readme><![CDATA[Route hijacking and goodies for Block List rendering]]></readme>
   </info>
   <files>
     <folder path="src/Our.Umbraco.BlockListMvc/App_Plugins/Our.Umbraco.BlockListMvc" orgPath="App_Plugins/Our.Umbraco.BlockListMvc" />
