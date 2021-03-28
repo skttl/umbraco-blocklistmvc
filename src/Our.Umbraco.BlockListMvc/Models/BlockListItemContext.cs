@@ -16,7 +16,7 @@ namespace Our.Umbraco.BlockListMvc.Models
             List = list;
         }
 
-        private BlockListItem Item;
+        public BlockListItem Item;
         public BlockListModel List;
 
         private int? _index;
